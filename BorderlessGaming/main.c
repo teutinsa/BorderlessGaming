@@ -238,7 +238,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					continue;
 
 				DWORD style = GetWindowLong(hTarget, GWL_STYLE);
-				if (style & WS_POPUP)
+				if ((style & WS_POPUP) == 0)
 				{
 					SetWindowLong(hTarget, GWL_STYLE, WS_POPUP | WS_SYSMENU | WS_MAXIMIZE | WS_VISIBLE);
 					UpdateWindow(hTarget);
